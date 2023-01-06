@@ -1,0 +1,171 @@
+backend:
+  name: github
+  repo: mdrie/klimaschutzmonitor
+  branch: main
+  #name: git-gateway
+#local_backend: true
+publish_mode: editorial_workflow
+
+media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+slug:
+  clean_accents: true
+
+
+
+collections:
+
+  - label: "Sektoren"
+    label_singular: "Sektor"
+    name: categories
+    folder: "content/categories"
+    extension: "json"
+    identifier_field: "id"
+    create: true
+    fields:
+      - label: Id
+        name: id
+        widget: string
+        pattern: ['^[a-z-]+$', "Nur Kleinbuchstaben und Minuszeichen ('-')."]
+        hint: "Bitte die ID nicht ändern und stattdessen einen neuen Eintrag anlegen.
+               Änderungen werden ignoriert, weil der Dateiname als ID verwendet wird.
+               Nur kleine Buchstaben sind erlaubt. Hauptsektoren und Untersektoren werden durch Minus getrennt."
+      - label: Titel
+        name: title
+        widget: string
+      - label: Beschreibung
+        name: description
+        widget: markdown
+        required: false
+        default: ""
+
+
+  - label: "Maßnahmen Gruppen"
+    label_singular: "Maßnahmen Gruppe"
+    name: "goalsets"
+    folder: "content/goalsets"
+    extension: "json"
+    identifier_field: "goalset"
+    create: true
+    fields:
+      - label: "Maßnahmen Gruppe"
+        name: goalset
+        widget: string
+        hint: "Bitte den Gruppennamen nicht ändern und stattdessen einen neuen Eintrag anlegen.
+               Änderungen werden ignoriert, weil der Dateiname verwendet wird."
+
+
+  - label: "Maßnahmen"
+    label_singular: "Maßnahme"
+    name: "goals"
+    summary: '{{fields.category}} - {{fields.title}}'
+    sortable_fields: ['category', 'title']
+    folder: "content/goals"
+    extension: "json"
+    identifier_field: "id"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Id
+        name: id
+        widget: string
+        pattern: ['^[a-z-]+$', "Nur Kleinbuchstaben und Minuszeichen ('-')."]
+      - label: Titel
+        name: title
+        widget: string
+      - label: Sektor
+        name: category
+        widget: relation
+        collection: categories
+        value_field: "{{slug}}"
+        search_fields: [id]
+      - label: "Maßnahmen Gruppen"
+        label_singular: "Maßnahmen Gruppe"
+        name: goalsets
+        widget: list
+        default: []
+        summary: "Gruppe: {{goalset}}"
+        field:
+          label: "Gruppe"
+          name: goalset
+          widget: relation
+          collection: goalsets
+          value_field: "{{slug}}"
+          search_fields: [goalset]
+          display_fields: [goalset]
+      - label: "Gewicht"
+        name: weight
+        widget: number
+        value_type: int
+        min: 0
+        max: 3
+        default: 0
+      - label: Beschreibung
+        name: description
+        widget: markdown
+        required: false
+        default: ""
+
+
+  - label: "Städte"
+    label_singular: "Stadt"
+    name: "cities"
+    folder: "content/cities"
+    extension: "json"
+    identifier_field: "name"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+        pattern: ['.{2,}', "Must have at least 2 characters"]
+      - label: "Budget"
+        name: "budget"
+        widget: "number"
+        value_type: int
+        min: 10
+        hint: "Enter the CO2 budget in million tons."
+      - label: "Einleitung"
+        name: introduction
+        widget: markdown
+        required: false
+        default: ""
+      - label: "Maßnahmen Gruppen"
+        label_singular: "Maßnahmen Gruppe"
+        name: goalsets
+        widget: list
+        default: []
+        summary: "Gruppe: {{goalset}}"
+        field:
+          label: "Gruppe"
+          name: goalset
+          widget: relation
+          collection: goalsets
+          value_field: "{{slug}}"
+          search_fields: ["{{slug}}"]
+          display_fields: [goalset]
+      - label: "Maßnahmen"
+        name: "goals"
+        widget: "list"
+        summary: '{{fields.goal}} - {{fields.state}}'
+        default: []
+        fields:
+          - label: Maßnahme
+            name: goal
+            widget: relation
+            collection: goals
+            value_field: "{{slug}}"
+            search_fields: [id, category, title]
+            display_fields: ["{{category}} -- {{title}}"]
+          - label: Zustand
+            name: state
+            widget: select
+            options: ["unbekannt", "in Arbeit", "verzögert/verfehlt", "abgeschlossen"]
+          - label: Beschreibung
+            name: description
+            widget: markdown
+            required: false
+            default: ""
+

@@ -1,0 +1,10 @@
+{
+  "goalsets": [
+    "grossstadt"
+  ],
+  "weight": 1,
+  "description": "Teile des Erdgasnetzes können auf Wasserstoff umgestellt werden. Neue Anbindungen von Industrie, die bisher mit anderen Energieträgern gearbeitet haben, wird aber auch notwendig sein.",
+  "id": "wasserstoffnetz",
+  "title": "Anbindung an ein Wasserstoffnetz",
+  "category": "industrie-auto"
+}

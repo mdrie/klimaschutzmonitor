@@ -1,0 +1,24 @@
+{
+  "name": "elm-pages-app",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "start": "elm-pages dev",
+    "build": "elm-pages build --base klimaschutzmonitor",
+    "dist:serve": "vite dist --base /klimaschutzmonitor/",
+    "cms:proxy": "netlify-cms-proxy-server",
+    "cms:serve": "vite public/admin",
+    "startcms": "concurrently --kill-others npm:cms:*"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "elm-optimize-level-2": "0.2.3",
+    "elm-pages": "2.1.10",
+    "elm-review": "^2.5.5",
+    "elm-tooling": "^1.4.0",
+    "netlify-cms-proxy-server": "^1.3.24",
+    "vite": "^3.2.4"
+  },
+  "dependencies": {
+    "netlify-cms-app": "^2.15.72"
+  }
+}

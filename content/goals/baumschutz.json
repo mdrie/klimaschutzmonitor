@@ -1,0 +1,8 @@
+{
+  "id": "baumschutz",
+  "title": "Baumschutzkonzept",
+  "goalsets": ["kleinstadt"],
+  "weight": 1,
+  "description": "# Warum?\n\nBaumschutz ist wichtig für den Klimaschutz..\n\n# Notwendige Maßnahmen\n\n1. Mindestzahl pro Quadratkilometer\n2. Konsequente Nachpflanzungen\n\n# Unterstützende Maßnahmen\n\n1. Öffentlichkeitsarbeit",
+  "category": "landnutzung"
+}
