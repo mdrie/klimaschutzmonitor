@@ -1,0 +1,10 @@
+{
+  "goalsets": [
+    "grossstadt"
+  ],
+  "weight": 1,
+  "description": "Beschreibung dieser Maßnahme. Hier kann natürlich noch mehr Text stehen. Und noch viel mehr.\n\nOder auch ein weiterer Absatz. Und ein zweiter Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz.",
+  "id": "buergerbeteiligung",
+  "title": "Bürgerbeteiligung",
+  "category": "strukturen-buerger"
+}

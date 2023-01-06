@@ -1,0 +1,8 @@
+{
+  "goalsets": ["kleinstadt"],
+  "weight": 1,
+  "description": "# Überschriften\nText\n## Abschnitte\nText\n### Unterabschnitte\nText\n\n",
+  "id": "klimawerkstatt",
+  "title": "Klimawerkstatt",
+  "category": "strukturen"
+}

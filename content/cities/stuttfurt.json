@@ -1,0 +1,155 @@
+{
+  "introduction": "Dieses Beispiel zeigt, wie in einer größeren Kommune mit vielen Maßnahmen eine Unterteilung in Sektoren und Sub-Sektoren vorgenommen werden kann. Bisher sind hier dieselben Maßnahmen aufgeführt wie für Rürstadt. Dadurch wirken die Listen vielleicht etwas kurz.",
+  "goals": [
+    {
+      "description": "Diese Maßnahme ist abgeschlossen und erfolgreich durchgeführt worden. Hier könnte jetzt auch ein [Link](http://example.com) stehen auf die Ergebnisse. In anderen Fällen eine Referenz auf eine wissenschaftliche Arbeit, die den Erfolg der Maßnahme nachweist.\n\n",
+      "goal": "buergerbeteiligung-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Wir brauchen viel mehr Personal.",
+      "goal": "personal-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Asdf sgdfh gsdfh fghj hfjk g hjkl Klsdfghsdfgh asdf df dgghj Dfghasdfasd sdfghjfghjghfj ghjhgj h jkk jk. Asdf sgdfh gsdfh fghj hfjk g hjkl Klsdfghsdfgh asdf df dgghj Dfghasdfasd sdfghjfghjghfj ghjhgj h jkk jk. Asdf sgdfh gsdfh fghj hfjk g hjkl Klsdfghsdfgh asdf df dgghj Dfghasdfasd sdfghjfghjghfj ghjhgj h jkk jk.",
+      "goal": "industrieplatzhalter-1",
+      "state": "in Arbeit"
+    },
+    {
+      "description": "Bisher ist in diesem Bereich leider nichts passiert.",
+      "goal": "beton-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Hier tut sich was.",
+      "goal": "klinaneutraleindustrie-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Hier tut sich was.",
+      "goal": "stahl-1",
+      "state": "in Arbeit"
+    },
+    {
+      "description": "Einfach zu wenig.",
+      "goal": "wasserstoff-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Netz ist da, aber leer.",
+      "goal": "wasserstoff-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Platzhalter werden nie bearbeitet.",
+      "goal": "energieplatzhalter-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Ein wenig mehr schon. Genaue Zahlen gibt es allerdings nicht.",
+      "goal": "mehrenergie-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Rathaus und Turnhalle wurden ausgestattet. Mehr öffentliche Gebäude gibt es leider nicht.",
+      "goal": "pv-oeffentliche-gebaeude-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Noch keine Daten.",
+      "goal": "vielenergie-1",
+      "state": "unbekannt"
+    },
+    {
+      "description": "Erste Anlagen sind gebaut.",
+      "goal": "solar-offensive-1",
+      "state": "in Arbeit"
+    },
+    {
+      "description": "Pläne sind vorbereitet, aber noch nicht beschlossen.",
+      "goal": "wind-gebietsauszeichnung-1",
+      "state": "in Arbeit"
+    },
+    {
+      "description": "Moore sind in keinem guten Zustand in Kleinstadt.",
+      "goal": "moorschutz-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Letzten Winter wurden zu viele Bäume gefällt.",
+      "goal": "baumschutz-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Der Dingstaforst wurde um 10 Ha erweitert.",
+      "goal": "aufforstung-1",
+      "state": "in Arbeit"
+    },
+    {
+      "description": "Ein Plan wurde vorgeschlagen. Die Verabschiedung im Rat wurde mehrfach vertagt.",
+      "goal": "waermeplanung-1",
+      "state": "in Arbeit"
+    },
+    {
+      "description": "Der Gasnetzbetreiber stellt sich quer.",
+      "goal": "wasserstoffnetz-2",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Die geplanten 3% sind tatsächlich saniert.",
+      "goal": "sanierungs-offensive-1",
+      "state": "in Arbeit"
+    },
+    {
+      "description": "Das Programm ist aufgesetzt und erfreut sich großer Beliebtheit.",
+      "goal": "heizungsmodernisierung-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Starker Widerstand der Bürger.",
+      "goal": "strassenrueckbau-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Es gibt ein schönes Konzept. Die Umsetzung fehlt hier leider noch.",
+      "goal": "radwegekonzept-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Der Ausbau scheitert leider an fehlendem Personal.",
+      "goal": "opnv-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Das Konzept ist erstellt und beschlossen.",
+      "goal": "innenstadtkonzept-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Verhandlungen mit Anbietern gestalten sich schwierig, weil viele Kommunen Bedarf haben.",
+      "goal": "carsharing-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Die zuständige Abteilung in der Verwaltung ist chronisch nicht erreichbar. Ein Anlagenhersteller mit drei Anlagen in der Gemeinde hat Interesse an einer solchen Umstellung.",
+      "goal": "biogas-1",
+      "state": "verzögert/verfehlt"
+    },
+    {
+      "description": "Die eigentlich zu niedrig gesteckten Ziele wurden erfüllt.",
+      "goal": "methanreduktion-1",
+      "state": "abgeschlossen"
+    },
+    {
+      "description": "Es gibt erste Entwürfe für das neue Förderprogramm.",
+      "goal": "duengung-1",
+      "state": "in Arbeit"
+    }
+  ],
+  "name": "Stuttfurt",
+  "budget": 10,
+  "goalsets": [
+    "grossstadt"
+  ]
+}

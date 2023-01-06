@@ -1,0 +1,8 @@
+{
+  "goalsets": ["kleinstadt"],
+  "weight": 1,
+  "description": "Beschreibung dieser Maßnahme. Hier kann natürlich noch mehr Text stehen. Und noch viel mehr. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz.",
+  "id": "meilensteinplan",
+  "title": "Meilensteinplan",
+  "category": "strukturen"
+}

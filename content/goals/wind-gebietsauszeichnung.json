@@ -1,0 +1,10 @@
+{
+  "id": "wind-gebietsauszeichnung",
+  "title": "Auszeichnung von mindestens 3% der Fläche für die Windkraft",
+  "goalsets": [
+    "kleinstadt"
+  ],
+  "weight": 2,
+  "description": "Hier kann natürlich noch mehr Text stehen. Und noch viel mehr.\n\nOder auch ein weiterer Absatz. Und ein zweiter Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz.",
+  "category": "energie"
+}

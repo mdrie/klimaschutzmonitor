@@ -1,0 +1,8 @@
+{
+  "goalsets": ["kleinstadt"],
+  "weight": 1,
+  "description": "Einfache Formatierungen sind möglich, z.B.\n\n* Aufzählungen\n* **Fettdruck**\n* *Kursiv*\n",
+  "id": "mehrstruktur",
+  "title": "Mehr Struktur",
+  "category": "strukturen"
+}
