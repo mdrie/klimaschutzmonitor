@@ -1,0 +1,10 @@
+{
+  "goalsets": [
+    "kleinstadt"
+  ],
+  "weight": 2,
+  "description": "Beschreibung dieser Maßnahme. Hier kann natürlich noch mehr Text stehen. Und noch viel mehr.\n\nOder auch ein weiterer Absatz. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz.",
+  "id": "vielenergie",
+  "title": "Viel Energie",
+  "category": "energie"
+}

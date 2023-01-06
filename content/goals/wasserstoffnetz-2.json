@@ -1,0 +1,10 @@
+{
+  "goalsets": [
+    "grossstadt"
+  ],
+  "weight": 1,
+  "description": "Beschreibung dieser Maßnahme. Hier kann natürlich noch mehr Text stehen. Und noch viel mehr. Oder auch ein weiterer Satz. Und ein dritter Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz. Und mehr, und mehr. Und noch ein Satz.\n\nOder vielleicht doch lieber ein weiterer Absatz? Mit noch mehr Infos?",
+  "id": "wasserstoffnetz",
+  "title": "Umstellung Gasnetz auf Wasserstoff",
+  "category": "gebaeude-gewerbe"
+}
