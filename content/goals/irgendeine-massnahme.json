@@ -1,0 +1,10 @@
+{
+  "goalsets": [
+    "kleinstadt"
+  ],
+  "weight": 1,
+  "description": "Beschreibung der Maßnahme.",
+  "id": "irgendeine-massnahme",
+  "title": "Irgendeine Maßnahme",
+  "category": "energie"
+}
