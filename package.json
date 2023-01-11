@@ -3,11 +3,13 @@
   "scripts": {
     "postinstall": "elm-tooling install",
     "start": "elm-pages dev",
-    "build": "elm-pages build --base klimaschutzmonitor",
-    "dist:serve": "vite dist --base /klimaschutzmonitor/",
     "cms:proxy": "netlify-cms-proxy-server",
     "cms:serve": "vite public/admin",
-    "startcms": "concurrently --kill-others npm:cms:*"
+    "startcms": "concurrently --kill-others npm:cms:*",
+    "build:elm": "elm-pages build --base klimaschutzmonitor",
+    "build:cms": "vite build public/admin --base /klimaschutzmonitor/admin/ --outDir ../../dist/admin",
+    "build": "npm run build:elm && npm run build:cms",
+    "servebuild": "vite preview --base /klimaschutzmonitor/"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",

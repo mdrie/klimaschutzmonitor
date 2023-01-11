@@ -14,6 +14,8 @@ TODO: VIDEO
 
 Wenn Du Interesse hast, damit Daten einzugeben, brauchst Du ein GitHub Konto. Diesem Konto kann ich dann die Bearbeitung erlauben.
 
+Danach erreichst Du die Formulare über diesen Link: <https://mdrie.github.io/klimaschutzmonitor/admin/>.
+
 ## Development
 
 Everything related to development is written in English.
@@ -61,7 +63,7 @@ This will also show a link, e.g.
 ➜  Local:   http://localhost:5173/
 ```
 
-**Note:** The CMS will now still edit the content on GitHub directly, requiring authorization and causing a commit for every time you click a publish button.
+**Note:** The CMS will now still edit the content on GitHub directly, requiring authorization and causing a pull request for every time you click a "Save" button.
 
 ### CMS for Editing Locally
 
@@ -77,6 +79,8 @@ local_backend: true
 #publish_mode: editorial_workflow
 ```
 
+PLEASE make sure not to push this change to GitHub.
+
 Now you can run both the development server as above and in a separate shell the local CMS with:
 
 ```sh
@@ -85,7 +89,7 @@ npm run startcms
 
 The CMS will not ask for a login and edit the local contents directly. Any changes in the CMS will be reflected immediately in the frontend. This is much more convenient when editing larger amounts.
 
-It would be nice to have a separate `config.yml` for this, such that editing the file is not needed. However, then the collection configuration in the same file would be duplicated. Once Static CMS (successor of Netlify CMS)
+It would be nice to have a separate `config.yml` for this, such that editing the file is not needed. However, then the collection configuration in the same file would be duplicated. Once we swithch to Static CMS (successor of Netlify CMS), this might improve.
 
 ### Deployment
 
@@ -98,7 +102,7 @@ npm run build
 This will produce the directory `dist`, which may be served with a web server or on a CDN. It can be served locally for testing with
 
 ```sh
-npm run dist:serve
+npm run servebuild
 ```
 
 This is performed for each push to the main branch on GitHub or any pull request. If it succeeds on the main branch, it is automatically deployed to <https://mdrie.github.io/klimaschutzmonitor/>.
