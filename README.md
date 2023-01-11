@@ -10,7 +10,7 @@ Dies ist eine Demo, mit der das Prinzip verdeutlicht werden soll. Es wäre schö
 
 Derzeit können die Inhalte mithilfe von Formularen bearbeitet werden. Im folgenden Video wird das einmal demonstriert:
 
-![Video: Anleitung für die Dateneingabe](https://raw.githubusercontent.com/mdrie/klimaschutzmonitor/main/doc/AnleitungDateneingabe.mp4 "Video: Anleitung für die Dateneingabe")
+https://user-images.githubusercontent.com/31070920/211902138-3dc14a51-e43a-464d-a84e-f68ed3fa8f4b.mp4
 
 Wenn Du Interesse hast, damit Daten einzugeben, brauchst Du ein GitHub Konto. Diesem Konto kann ich dann die Bearbeitung erlauben.
 
