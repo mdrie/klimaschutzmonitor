@@ -2,6 +2,7 @@ backend:
   name: github
   repo: mdrie/klimaschutzmonitor
   branch: main
+  site_domain: vocal-dusk-a82d61.netlify.com
   #name: git-gateway
 #local_backend: true
 publish_mode: editorial_workflow
