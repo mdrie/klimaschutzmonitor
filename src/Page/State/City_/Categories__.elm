@@ -367,11 +367,52 @@ viewCategoryCard myLink catTreeEntry =
                 , subCss "a" [ C.color theme.mainArea.textColor, C.fontSize (C.pt 15) ]
                 ]
             ]
-            [ div [ css [ C.padding2 (C.px 0) (C.px 20) ] ] [ myLink catTreeEntry.data.id [] [ text catTreeEntry.data.title ] ]
+            [ div [ css [ C.displayFlex, C.padding2 (C.px 10) (C.px 20) ] ]
+                [ myLink catTreeEntry.data.id [ css [ C.width (C.pct 100) ] ] [ text catTreeEntry.data.title ]
+                , viewProgressBar catTreeEntry
+                ]
             , viewSubCategories myLink catTreeEntry.subCategories
             , viewGoals catTreeEntry.goalStates
             ]
         ]
+
+
+viewProgressBar : CategoryTreeData -> Html Msg
+viewProgressBar catTreeEntry =
+    div
+        [ css
+            [ C.displayFlex
+            , C.width (C.px 30)
+            , C.height (C.px 30)
+            , C.borderRadius (C.px 5)
+
+            -- , C.backgroundColor (C.hex "000000")
+            , C.overflow C.hidden
+            ]
+        ]
+        (stateValues
+            |> List.map
+                (\state ->
+                    div [ css [ C.width (C.pct (percentOfGoals state catTreeEntry)), C.backgroundColor (C.hex (Tuple.first (goalStateColorSymbol state))) ] ] []
+                )
+        )
+
+
+percentOfGoals : StateValue -> CategoryTreeData -> Float
+percentOfGoals state catTreeEntry =
+    let
+        getGoals: CategoryTreeData -> List GoalState
+        getGoals treeEntry = 
+            List.append treeEntry.goalStates
+            (CategoryTree.toList treeEntry.subCategories
+                |> List.map getGoals
+                |> List.concat)
+        goals = getGoals catTreeEntry
+        numWithState = goals |> List.filter (\g -> stringToStateValue g.state == state) |> List.length
+    in
+    toFloat numWithState / (toFloat (List.length goals)) * 100.1
+
+
 
 
 viewSubCategories : (String -> HtmlTag Msg) -> CategoryTree -> Html Msg
@@ -392,13 +433,17 @@ viewSubCategories myLink tree =
                         (\catTreeEntry ->
                             div
                                 [ css
-                                    [ C.margin (C.px 5)
+                                    [ C.displayFlex
+                                    , C.alignItems C.center
+                                    , C.margin (C.px 5)
                                     , C.padding (C.px 5)
                                     , C.backgroundColor theme.mainArea.subColor
                                     , C.borderRadius (C.px 5)
                                     ]
                                 ]
-                                [ myLink catTreeEntry.data.id [] [ text catTreeEntry.data.title ] ]
+                                [ myLink catTreeEntry.data.id [ css [ C.width (C.pct 100) ] ] [ text catTreeEntry.data.title ]
+                                , viewProgressBar catTreeEntry
+                                ]
                         )
                 )
 
@@ -433,18 +478,7 @@ viewGoalState : GoalState -> Html Msg
 viewGoalState goalState =
     let
         ( color, symbol ) =
-            case goalState.state of
-                "in Arbeit" ->
-                    ( "FFAA00", "!" )
-
-                "verzögert/verfehlt" ->
-                    ( "FF0000", "X" )
-
-                "abgeschlossen" ->
-                    ( "00AA00", "✓" )
-
-                _ ->
-                    ( "777777", "?" )
+            goalStateColorSymbol (stringToStateValue goalState.state)
     in
     div
         [ css
@@ -461,3 +495,47 @@ viewGoalState goalState =
             ]
         ]
         [ text symbol ]
+
+
+type StateValue
+    = Unknown
+    | Delayed
+    | InProgress
+    | Finished
+
+
+stateValues : List StateValue
+stateValues =
+    [ Finished, InProgress, Unknown, Delayed ]
+
+
+stringToStateValue : String -> StateValue
+stringToStateValue string =
+    case string of
+        "in Arbeit" ->
+            InProgress
+
+        "verzögert/verfehlt" ->
+            Delayed
+
+        "abgeschlossen" ->
+            Finished
+
+        _ ->
+            Unknown
+
+
+goalStateColorSymbol : StateValue -> ( String, String )
+goalStateColorSymbol state =
+    case state of
+        InProgress ->
+            ( "FFAA00", "!" )
+
+        Delayed ->
+            ( "FF0000", "X" )
+
+        Finished ->
+            ( "00AA00", "✓" )
+
+        Unknown ->
+            ( "777777", "?" )
