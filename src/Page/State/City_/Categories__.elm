@@ -367,52 +367,23 @@ viewCategoryCard myLink catTreeEntry =
                 , subCss "a" [ C.color theme.mainArea.textColor, C.fontSize (C.pt 15) ]
                 ]
             ]
-            [ div [ css [ C.displayFlex, C.padding2 (C.px 10) (C.px 20) ] ]
+            [ div [ css [ C.padding2 (C.px 10) (C.px 20) ] ]
                 [ myLink catTreeEntry.data.id [ css [ C.width (C.pct 100) ] ] [ text catTreeEntry.data.title ]
-                , viewProgressBar catTreeEntry
+                , div
+                    [ css
+                        [ C.displayFlex
+                        , C.width (C.pct 100)
+                        , C.height (C.px 10)
+                        , C.borderRadius (C.px 3)
+                        , C.overflow C.hidden
+                        ]
+                    ]
+                    (progressBarEntries catTreeEntry)
                 ]
             , viewSubCategories myLink catTreeEntry.subCategories
             , viewGoals catTreeEntry.goalStates
             ]
         ]
-
-
-viewProgressBar : CategoryTreeData -> Html Msg
-viewProgressBar catTreeEntry =
-    div
-        [ css
-            [ C.displayFlex
-            , C.width (C.px 30)
-            , C.height (C.px 30)
-            , C.borderRadius (C.px 5)
-
-            -- , C.backgroundColor (C.hex "000000")
-            , C.overflow C.hidden
-            ]
-        ]
-        (stateValues
-            |> List.map
-                (\state ->
-                    div [ css [ C.width (C.pct (percentOfGoals state catTreeEntry)), C.backgroundColor (C.hex (Tuple.first (goalStateColorSymbol state))) ] ] []
-                )
-        )
-
-
-percentOfGoals : StateValue -> CategoryTreeData -> Float
-percentOfGoals state catTreeEntry =
-    let
-        getGoals: CategoryTreeData -> List GoalState
-        getGoals treeEntry = 
-            List.append treeEntry.goalStates
-            (CategoryTree.toList treeEntry.subCategories
-                |> List.map getGoals
-                |> List.concat)
-        goals = getGoals catTreeEntry
-        numWithState = goals |> List.filter (\g -> stringToStateValue g.state == state) |> List.length
-    in
-    toFloat numWithState / (toFloat (List.length goals)) * 100.1
-
-
 
 
 viewSubCategories : (String -> HtmlTag Msg) -> CategoryTree -> Html Msg
@@ -442,10 +413,46 @@ viewSubCategories myLink tree =
                                     ]
                                 ]
                                 [ myLink catTreeEntry.data.id [ css [ C.width (C.pct 100) ] ] [ text catTreeEntry.data.title ]
-                                , viewProgressBar catTreeEntry
+                                , div
+                                    [ css
+                                        [ C.displayFlex
+                                        , C.width (C.px 30)
+                                        , C.height (C.px 30)
+                                        , C.borderRadius (C.px 5)
+                                        , C.overflow C.hidden
+                                        ]
+                                    ]
+                                    (progressBarEntries catTreeEntry)
                                 ]
                         )
                 )
+
+
+progressBarEntries : CategoryTreeData -> List (Html Msg)
+progressBarEntries catTreeEntry =
+    let
+        getGoals : CategoryTreeData -> List GoalState
+        getGoals treeEntry =
+            List.append treeEntry.goalStates
+                (CategoryTree.toList treeEntry.subCategories
+                    |> List.map getGoals
+                    |> List.concat
+                )
+
+        goals =
+            getGoals catTreeEntry
+
+        numWithState state =
+            goals |> List.filter (\g -> stringToStateValue g.state == state) |> List.length
+
+        percentage state =
+            toFloat (numWithState state) / toFloat (List.length goals) * 100.1
+    in
+    stateValues
+        |> List.map
+            (\state ->
+                div [ css [ C.width (C.pct (percentage state)), C.backgroundColor (C.hex (Tuple.first (goalStateColorSymbol state))) ] ] []
+            )
 
 
 viewGoals : List CategoryTree.GoalState -> Html Msg
