@@ -1,0 +1,10 @@
+{
+  "goalsets": [
+    "grossstadt"
+  ],
+  "weight": 0,
+  "description": "Kohlekraftwerke werden stillgelegt oder umfunktioniert.",
+  "id": "kohleausstieg",
+  "title": "Kohleausstieg",
+  "category": "energie-stromerzeugung"
+}
