@@ -145,6 +145,11 @@
       "description": "Es gibt erste Entwürfe für das neue Förderprogramm.",
       "goal": "duengung-1",
       "state": "in Arbeit"
+    },
+    {
+      "description": "Kohleausstieg 2023\n\nKohlekraftwerk 1 Stillgelegt \n\nKohlekraftwerk 2 verzögert wegen Energiekrise",
+      "goal": "kohleausstieg",
+      "state": "in Arbeit"
     }
   ],
   "name": "Stuttfurt",
