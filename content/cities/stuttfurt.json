@@ -150,6 +150,11 @@
       "description": "Kohleausstieg 2023\n\nKohlekraftwerk 1 Stillgelegt \n\nKohlekraftwerk 2 verzögert wegen Energiekrise",
       "goal": "kohleausstieg",
       "state": "in Arbeit"
+    },
+    {
+      "description": "Test\n\nob der Subsektor richtig angezeigt wird.",
+      "goal": "kohleaussttieg-sofort",
+      "state": "in Arbeit"
     }
   ],
   "name": "Stuttfurt",
