@@ -155,6 +155,11 @@
       "description": "Test\n\nob der Subsektor richtig angezeigt wird.",
       "goal": "kohleaussttieg-sofort",
       "state": "in Arbeit"
+    },
+    {
+      "description": "Der Stadtrat sträubt sich...",
+      "state": "in Arbeit",
+      "goal": "aufforstung"
     }
   ],
   "name": "Stuttfurt",
