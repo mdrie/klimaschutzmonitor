@@ -4,7 +4,13 @@
     "bremen",
     "grossstadt"
   ],
-  "goals": [],
+  "goals": [
+    {
+      "description": "Derzeit wird Fernwärmenetz des MHKW ausgebaut.",
+      "goal": "bre-energie-fernwaermeausbau",
+      "state": "unbekannt"
+    }
+  ],
   "name": "Bremen ",
   "budget": 21800
 }
